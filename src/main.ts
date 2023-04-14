@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './assets/App.vue'
+import App from './views/home/App.vue'
 import vant from 'vant';
 import { Lazyload  } from 'vant';
 

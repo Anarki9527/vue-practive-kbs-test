@@ -1,17 +1,18 @@
 <script lang="ts">
 import { onMounted, onUnmounted, defineComponent, ref } from 'vue';
+import Activity from '../activity/index.vue';
 
 
 export default defineComponent({
-  name: 'Carousel',
+  name: 'Home',
   setup() {
     const images = [
-      { id: 0, src: "/src/assets/swipe_image/001.jpg" },
-      { id: 1, src: "/src/assets/swipe_image/002.jpg" },
-      { id: 2, src: "/src/assets/swipe_image/003.jpg" },
-      { id: 3, src: "/src/assets/swipe_image/004.jpg" },
-      { id: 4, src: "/src/assets/swipe_image/005.jpg" },
-      { id: 5, src: "/src/assets/swipe_image/006.jpg" },
+      { id: 0, src: "/src/views/home/swipe_image/001.jpg" },
+      { id: 1, src: "/src/views/home/swipe_image/002.jpg" },
+      { id: 2, src: "/src/views/home/swipe_image/003.jpg" },
+      { id: 3, src: "/src/views/home/swipe_image/004.jpg" },
+      { id: 4, src: "/src/views/home/swipe_image/005.jpg" },
+      { id: 5, src: "/src/views/home/swipe_image/006.jpg" },
     ]
 
     return {
@@ -26,46 +27,38 @@ export default defineComponent({
     return {
       gameListData: [
         [
-          { id: 1, src: 'src/assets/game_list/casino/001-STUDIO-BAC-10.png', alt: 'image1', gameName: '經典百家樂10' },
-          { id: 2, src: 'src/assets/game_list/casino/002-STUDIO-BAC-1.png', alt: 'image1', gameName: '世界盃666' },
-          { id: 3, src: 'src/assets/game_list/casino/003-STUDIO-DIL-102.png', alt: 'image1', gameName: '財神骰寶' },
-          { id: 4, src: 'src/assets/game_list/casino/004-STUDIO-ROL-103.png', alt: 'image1', gameName: '財神輪盤' },
-          { id: 5, src: 'src/assets/game_list/casino/005-STUDIO-BAS-11.png', alt: 'image1', gameName: '拳賽廳1' },
-          { id: 6, src: 'src/assets/game_list/casino/006-STUDIO-DT-12.png', alt: 'image1', gameName: '龍虎12' },
+          { id: 1, src: 'src/views/home/game_list/casino/001-STUDIO-BAC-10.png', alt: 'image1', gameName: '經典百家樂10' },
+          { id: 2, src: 'src/views/home/game_list/casino/002-STUDIO-BAC-1.png', alt: 'image1', gameName: '世界盃666' },
+          { id: 3, src: 'src/views/home/game_list/casino/003-STUDIO-DIL-102.png', alt: 'image1', gameName: '財神骰寶' },
+          { id: 4, src: 'src/views/home/game_list/casino/004-STUDIO-ROL-103.png', alt: 'image1', gameName: '財神輪盤' },
+          { id: 5, src: 'src/views/home/game_list/casino/005-STUDIO-BAS-11.png', alt: 'image1', gameName: '拳賽廳1' },
+          { id: 6, src: 'src/views/home/game_list/casino/006-STUDIO-DT-12.png', alt: 'image1', gameName: '龍虎12' },
         ],
         [
-          { id: 1, src: 'src/assets/game_list/sports/001.png', alt: 'image1', gameName: '籃球' },
-          { id: 2, src: 'src/assets/game_list/sports/002.png', alt: 'image1', gameName: '足球' },
-          { id: 3, src: 'src/assets/game_list/sports/003.png', alt: 'image1', gameName: '棒球' },
-          { id: 4, src: 'src/assets/game_list/sports/004.png', alt: 'image1', gameName: '羽球' },
-          { id: 5, src: 'src/assets/game_list/sports/005.png', alt: 'image1', gameName: '網球' },
-          { id: 6, src: 'src/assets/game_list/sports/006.png', alt: 'image1', gameName: '拳擊' },
-          { id: 7, src: 'src/assets/game_list/sports/007.png', alt: 'image1', gameName: '橄欖球' },
-          { id: 8, src: 'src/assets/game_list/sports/008.png', alt: 'image1', gameName: '桌球' },
+          { id: 1, src: 'src/views/home/game_list/sports/001.png', alt: 'image1', gameName: '籃球' },
+          { id: 2, src: 'src/views/home/game_list/sports/002.png', alt: 'image1', gameName: '足球' },
+          { id: 3, src: 'src/views/home/game_list/sports/003.png', alt: 'image1', gameName: '棒球' },
+          { id: 4, src: 'src/views/home/game_list/sports/004.png', alt: 'image1', gameName: '羽球' },
+          { id: 5, src: 'src/views/home/game_list/sports/005.png', alt: 'image1', gameName: '網球' },
+          { id: 6, src: 'src/views/home/game_list/sports/006.png', alt: 'image1', gameName: '拳擊' },
+          { id: 7, src: 'src/views/home/game_list/sports/007.png', alt: 'image1', gameName: '橄欖球' },
+          { id: 8, src: 'src/views/home/game_list/sports/008.png', alt: 'image1', gameName: '桌球' },
         ],
       ],
-      gameListImg: [
-        { id: 1, src: 'src/assets/game_list/casino/001-STUDIO-BAC-10.png', alt: 'image1', gameName: '經典百家樂10' },
-        { id: 2, src: 'src/assets/game_list/casino/002-STUDIO-BAC-1.png', alt: 'image1', gameName: '世界盃666' },
-        { id: 3, src: 'src/assets/game_list/casino/003-STUDIO-DIL-102.png', alt: 'image1', gameName: '財神骰寶' },
-        { id: 4, src: 'src/assets/game_list/casino/004-STUDIO-ROL-103.png', alt: 'image1', gameName: '財神輪盤' },
-        { id: 5, src: 'src/assets/game_list/casino/005-STUDIO-BAS-11.png', alt: 'image1', gameName: '拳賽廳1' },
-        { id: 6, src: 'src/assets/game_list/casino/006-STUDIO-DT-12.png', alt: 'image1', gameName: '龍虎12' },
-      ],
       footerBtnImg: [
-        { id: 1, src: 'src/assets/footer_img/imgHome.jpg', alt: 'Home', },
-        { id: 2, src: 'src/assets/footer_img/imgPresent.jpg', alt: 'Present', },
-        { id: 3, src: 'src/assets/footer_img/imgCash.jpg', alt: 'Cash', },
-        { id: 4, src: 'src/assets/footer_img/imgNotice.jpg', alt: 'Notice', },
-        { id: 5, src: 'src/assets/footer_img/imgWithrew.jpg', alt: 'Withdrew', },
+        { id: 1, src: 'src/views/home/footer_img/imgHome.jpg', alt: 'Home', },
+        { id: 2, src: 'src/views/home/footer_img/imgPresent.jpg', alt: 'Present', },
+        { id: 3, src: 'src/views/home/footer_img/imgCash.jpg', alt: 'Cash', },
+        { id: 4, src: 'src/views/home/footer_img/imgNotice.jpg', alt: 'Notice', },
+        { id: 5, src: 'src/views/home/footer_img/imgWithrew.jpg', alt: 'Withdrew', },
       ],
       gameTypeBtnList: [
-        { id: 1, src: 'src/assets/game_type_list/001.jpg', text: 'Casino', alt: 'Casino', },
-        { id: 2, src: 'src/assets/game_type_list/002.jpg', text: 'Sports', alt: 'Sports', },
-        { id: 3, src: 'src/assets/game_type_list/003.jpg', text: 'Slot', alt: 'Slot', },
-        { id: 4, src: 'src/assets/game_type_list/004.jpg', text: 'Lottery', alt: 'Lottery', },
-        { id: 5, src: 'src/assets/game_type_list/005.jpg', text: 'Chess', alt: 'Chess', },
-        { id: 6, src: 'src/assets/game_type_list/006.jpg', text: 'Fishing', alt: 'Fishing', },
+        { id: 1, src: 'src/views/home/game_type_list/001.jpg', text: 'Casino', alt: 'Casino', },
+        { id: 2, src: 'src/views/home/game_type_list/002.jpg', text: 'Sports', alt: 'Sports', },
+        { id: 3, src: 'src/views/home/game_type_list/003.jpg', text: 'Slot', alt: 'Slot', },
+        { id: 4, src: 'src/views/home/game_type_list/004.jpg', text: 'Lottery', alt: 'Lottery', },
+        { id: 5, src: 'src/views/home/game_type_list/005.jpg', text: 'Chess', alt: 'Chess', },
+        { id: 6, src: 'src/views/home/game_type_list/006.jpg', text: 'Fishing', alt: 'Fishing', },
       ],
       checked: false,
       nowPageIdx: 1,
@@ -96,10 +89,10 @@ export default defineComponent({
     <!-- 頂部面板 -->
     <div class="header">
       <div class="yellow-bar">
-        <img alt="KBS Logo" class="kbslogo" src="./assets/kbsbet_logo.png" />
+        <img alt="KBS Logo" class="kbslogo" src="./kbsbet_logo.png" />
         <div>
           <span>99999 VND</span>
-          <img alt="Person" class="person-img" src="./assets/img_person.png" />
+          <img alt="Person" class="person-img" src="./img_person.png" />
         </div>
       </div>
     </div>
@@ -114,7 +107,7 @@ export default defineComponent({
 
       <!-- 公告欄 -->
       <div class="notice-bar">
-        <img src="./assets/img_notion.jpg" alt="notion">
+        <img src="./img_notion.jpg" alt="notion">
         <span>
           anarkixd**** win bonus amount 8888 by Slot
         </span>
